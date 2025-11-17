@@ -1,0 +1,87 @@
+{
+  "app": {
+    "name": "Multilingual Chatbot",
+    "version": "1.0.0",
+    "description": "Production-ready multilingual chatbot with AI-powered responses"
+  },
+  "languages": {
+    "supported": ["en", "hi", "es", "fr", "ta", "de"],
+    "default": "en",
+    "autoDetect": true
+  },
+  "features": {
+    "voiceInput": true,
+    "voiceOutput": true,
+    "fileAttachments": true,
+    "darkMode": true,
+    "translation": true
+  },
+  "ai": {
+    "provider": "openai",
+    "model": "gpt-4-turbo-preview",
+    "temperature": 0.7,
+    "maxTokens": 500,
+    "contextMessages": 10
+  },
+  "translation": {
+    "provider": "google",
+    "fallbackProvider": "libre",
+    "cacheEnabled": true
+  },
+  "chat": {
+    "retentionDays": 90,
+    "maxConversationsPerUser": 100,
+    "maxMessagesPerConversation": 1000,
+    "typingIndicator": true,
+    "messageStatus": true
+  },
+  "security": {
+    "authentication": "supabase",
+    "rowLevelSecurity": true,
+    "rateLimitPerMinute": 20,
+    "maxMessageLength": 2000
+  },
+  "ui": {
+    "theme": {
+      "primaryColor": "#2563eb",
+      "secondaryColor": "#64748b",
+      "accentColor": "#10b981"
+    },
+    "sidebar": {
+      "defaultOpen": true,
+      "width": 320
+    },
+    "messages": {
+      "maxWidth": "70%",
+      "showTimestamp": true,
+      "showStatus": true
+    }
+  },
+  "widget": {
+    "enabled": true,
+    "position": "bottom-right",
+    "primaryColor": "#2563eb",
+    "welcomeMessage": "Hello! How can I help you today?"
+  },
+  "analytics": {
+    "enabled": true,
+    "trackEvents": [
+      "message_sent",
+      "message_received",
+      "language_changed",
+      "conversation_created",
+      "voice_input_used",
+      "file_uploaded"
+    ]
+  },
+  "admin": {
+    "dashboardEnabled": true,
+    "allowedRoles": ["admin", "moderator"],
+    "features": {
+      "viewStats": true,
+      "editSettings": true,
+      "viewConversations": true,
+      "manageCannedResponses": true
+    }
+  }
+}
